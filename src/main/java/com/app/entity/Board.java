@@ -20,7 +20,6 @@ public class Board {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="board_id")
 	private Long id;
-//	@Query("select c from Cita c where horarioConsulta >= ?1")
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_board_id") 
