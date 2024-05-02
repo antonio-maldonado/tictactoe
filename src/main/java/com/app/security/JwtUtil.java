@@ -16,9 +16,10 @@ public class JwtUtil {
 
 	private static long expiration = 2678400000L;
 
-	public String generateToken(String username) {
+	public String generateToken(String username,long id) {
 		return Jwts.builder()
 				.subject(username)
+				.id(Long.toString(id))
 				.issuedAt(new Date())
 				.expiration(new Date(System.currentTimeMillis() + expiration))
 				.signWith(secretKey)

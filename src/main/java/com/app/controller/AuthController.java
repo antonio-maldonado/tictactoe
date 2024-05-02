@@ -27,12 +27,12 @@ public class AuthController {
     
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
-        User user = userService.getUserByEmail(loginRequest.getEmail());
+        User user = userService.getUserByEmail(loginRequest.getUsername());
         if (user == null || !new BCryptPasswordEncoder().matches(loginRequest.getPassword(), user.getPassword())) {
             return ResponseEntity.status(401).body("Invalid credentials");
         }
 
-        String token = jwtUtil.generateToken(loginRequest.getEmail());
+        String token = jwtUtil.generateToken(loginRequest.getUsername(),user.getId());
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
@@ -45,7 +45,7 @@ public class AuthController {
 
 @Data
 class LoginRequest {
-    private String email;
+    private String username;
     private String password;
 }
 

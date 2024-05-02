@@ -25,5 +25,6 @@ public class Board {
 	@JoinColumn(name = "fk_board_id") 
 	private List<BoardSquare> boardState = new ArrayList<>();
 	
+	@Column(name="is_finished")
 	private boolean isFinished = false;
 }

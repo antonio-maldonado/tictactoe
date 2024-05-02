@@ -3,10 +3,12 @@ package com.app.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.app.entity.BoardSquare;
 import com.app.repository.BoardSquareRepository;
 
+@Service
 public class BoardSquareServiceImpl implements BoardSquareService {
 	@Autowired
 	private BoardSquareRepository boardSquareRepository;
