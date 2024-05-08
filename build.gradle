@@ -20,7 +20,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+	
+	implementation 'org.projectlombok:lombok:1.18.30' // Sustituye 1.18.30 con la última versión
+    annotationProcessor 'org.projectlombok:lombok:1.18.30' // Necesario para procesar las anotaciones de Lombok
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3' // Asegúrate de tener dependencias para pruebas
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'	
 	
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	

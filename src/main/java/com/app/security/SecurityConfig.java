@@ -25,7 +25,7 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(request -> {
                 var config = new org.springframework.web.cors.CorsConfiguration();
                 config.setAllowCredentials(true);
-                config.addAllowedOrigin("http://localhost:5173");
+                config.addAllowedOrigin("https://tic-tac-toe-game-react-java.netlify.app/");
                 config.addAllowedMethod("*");
                 config.addAllowedHeader("*");
                 return config;
