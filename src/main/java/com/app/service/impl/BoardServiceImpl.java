@@ -1,6 +1,7 @@
 package com.app.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,13 +15,23 @@ public class BoardServiceImpl implements BoardService{
 	private BoardRepository boardRepository;
 	
 	@Override
-	public Board createBoard(Board board) {
-		return boardRepository.save(board);
+	public Board createBoard(Board newBoard) {
+		if(newBoard == null) {
+			return null;
+		}
+		
+		return boardRepository.save(newBoard);
 	}
 
 	@Override
-	public Board getBoardById(long id) {
-		return boardRepository.findById(id).orElseThrow();
+	public Board getBoardById(long userId) {
+		Optional<Board> existingBoard =  boardRepository.findById(userId);
+		
+		if(existingBoard.isEmpty()) {
+			return null;
+		}
+		
+		return existingBoard.get();
 	}
 
 	@Override
@@ -29,15 +40,23 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public Board updateBoard(Board board, long id) {
-		Board existingBoard = boardRepository.findById(id).orElseThrow();
-		existingBoard.setBoardState(board.getBoardState());
-		existingBoard.setFinished(board.isFinished());
+	public Board updateBoard(Board newBoard, long userId) {
+		Optional<Board> existingBoardOptional = boardRepository.findById(userId);
+		
+		if(existingBoardOptional.isEmpty()) {
+			return null;
+		}
+		
+		Board existingBoard = existingBoardOptional.get();
+		
+		existingBoard.setBoardState(newBoard.getBoardState());
+		existingBoard.setFinished(newBoard.isFinished());
+		
 		return boardRepository.save(existingBoard);
 	}
 
 	@Override
-	public void deleteBoard(Long id) {
-		boardRepository.deleteById(id);
+	public void deleteBoard(long userId) {
+		boardRepository.deleteById(userId);
 	}
 }

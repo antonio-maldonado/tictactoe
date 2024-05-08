@@ -6,13 +6,13 @@ import com.app.entity.BoardSquare;
 
 
 public interface BoardSquareService {
-	BoardSquare createBoardSquare(BoardSquare board); 
+	BoardSquare createBoardSquare(BoardSquare newBoard); 
 
-	BoardSquare getBoardSquareById(long id);
+	BoardSquare getBoardSquareById(long userId);
 
 	List<BoardSquare> getAllBoardSquares();
 
-	BoardSquare updateBoardSquare(BoardSquare board, long id);
+	BoardSquare updateBoardSquare(BoardSquare newBoard, long userId);
 
-	void deleteBoardSquare(Long id);
+	void deleteBoardSquare(long userId);
 }

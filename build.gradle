@@ -28,6 +28,10 @@ dependencies {
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
 	
+	testImplementation 'org.testcontainers:junit-jupiter:1.19.7'
+	testImplementation 'org.testcontainers:mysql:1.19.7'
+	
+	implementation group: 'net.minidev', name: 'json-smart', version: '2.5.1'
 	
 	
 }

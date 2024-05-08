@@ -38,8 +38,8 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<UserDAO> register(@RequestBody User userRequest) {
-        UserDAO user= userService.createUser(userRequest);
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
+        User user= userService.createUser(userRequest);
+        return new ResponseEntity<>(new UserDAO(user), HttpStatus.CREATED);
     }
 }
 

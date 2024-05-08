@@ -1,6 +1,7 @@
 package com.app.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,13 +15,23 @@ public class BoardSquareServiceImpl implements BoardSquareService {
 	private BoardSquareRepository boardSquareRepository;
 	
 	@Override
-	public BoardSquare createBoardSquare(BoardSquare board) {
-		return boardSquareRepository.save(board);
+	public BoardSquare createBoardSquare(BoardSquare newBoard) {
+		if(newBoard == null) {
+			return null;
+		}
+		
+		return boardSquareRepository.save(newBoard);
 	}
 
 	@Override
-	public BoardSquare getBoardSquareById(long id) {
-		return boardSquareRepository.findById(id).orElseThrow();
+	public BoardSquare getBoardSquareById(long userId) {
+		Optional<BoardSquare> existingBoardSquareOptional = boardSquareRepository.findById(userId);
+		
+		if(existingBoardSquareOptional.isEmpty()) {
+			return null;
+		}
+		
+		return existingBoardSquareOptional.get();
 	}
 
 	@Override
@@ -29,15 +40,22 @@ public class BoardSquareServiceImpl implements BoardSquareService {
 	}
 
 	@Override
-	public BoardSquare updateBoardSquare(BoardSquare board, long id) {
-		BoardSquare existingBoardSquare = boardSquareRepository.findById(id).orElseThrow();
-		existingBoardSquare.setState(board.getState());
+	public BoardSquare updateBoardSquare(BoardSquare newBoard, long userId) {
+		Optional<BoardSquare> existingBoardSquareOptional = boardSquareRepository.findById(userId);
+		
+		if(existingBoardSquareOptional.isEmpty()) {
+			return null;
+		}
+		
+		BoardSquare existingBoardSquare = existingBoardSquareOptional.get();
+		existingBoardSquare.setState(newBoard.getState());
+		
 		return boardSquareRepository.save(existingBoardSquare);
 	}
 
 	@Override
-	public void deleteBoardSquare(Long id) {
-		boardSquareRepository.deleteById(id);
+	public void deleteBoardSquare(long userId) {
+		boardSquareRepository.deleteById(userId);
 		
 	}
 }

@@ -4,20 +4,19 @@ import java.util.List;
 
 import com.app.entity.Board;
 import com.app.entity.User;
-import com.app.entity.UserDAO;
 
 public interface UserService {
-	UserDAO createUser(User user); 
+	User createUser(User newUser); 
 
-	UserDAO getUserById(long id);
+	User getUserById(long userId);
 
-	List<UserDAO> getAllUsers();
+	List<User> getAllUsers();
 
-	UserDAO updateUser(User user, long id);
+	User updateUser(User newUser, long userId);
 
 	User getUserByEmail(String email);
 
-	List<Board> getBoardsByUserId(long id);
+	List<Board> getBoardsByUserId(long userId);
 	
-	void deleteUser(Long id);
+	void deleteUser(Long userId);
 }

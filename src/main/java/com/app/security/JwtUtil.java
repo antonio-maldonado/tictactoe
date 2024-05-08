@@ -11,7 +11,7 @@ import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JwtUtil {
-	private static SecretKey secretKey = Keys
+	private SecretKey secretKey = Keys
 			.hmacShaKeyFor(";xW&C6;*R*R/6eoQsD6nv\\nfn209d~TBOx".getBytes());
 
 	private static long expiration = 2678400000L;
