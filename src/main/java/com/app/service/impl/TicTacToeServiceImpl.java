@@ -1,5 +1,7 @@
 package com.app.service.impl;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
@@ -13,6 +15,8 @@ public class TicTacToeServiceImpl implements TicTacToeService{;
 	
 	@Override
 	public boolean checkWinner(Board board, int player) {
+		sortBoardSquares(board);
+		
 		List<BoardSquare> squares = board.getBoardState();
 		
         for (int[] combination : WINNING_COMBINATIONS) {
@@ -27,16 +31,15 @@ public class TicTacToeServiceImpl implements TicTacToeService{;
 
 	@Override
 	public Board playMove(Board board, int position, int player) {
+		sortBoardSquares(board);
+		
 		List<BoardSquare> squares = board.getBoardState();
 		
         if (squares.get(position).getState() == 0) {
             squares.get(position).setState(player);
         }
 
-        boolean gameFinished = checkWinner(board, player) || isBoardFull(board);
-        if (gameFinished) {
-            board.setFinished(true);
-        }
+        isGameFinished(board, player);
 
         return board;
 	}
@@ -53,6 +56,8 @@ public class TicTacToeServiceImpl implements TicTacToeService{;
 
 	@Override
 	public Board bestMove(Board board) {
+		sortBoardSquares(board);
+		
 		List<BoardSquare> squares = board.getBoardState();
         Random rand = new Random();
         while (true) {
@@ -63,7 +68,25 @@ public class TicTacToeServiceImpl implements TicTacToeService{;
             }
         }
         
+        isGameFinished(board, 2);
+
         return board;
+	}
+	
+	public void sortBoardSquares(Board board) {
+		Collections.sort(board.getBoardState(), new Comparator<BoardSquare>() {
+            @Override
+            public int compare(BoardSquare a, BoardSquare b) {
+                return Long.compare(a.getId(), b.getId());
+            }
+        });
+	}
+	
+	public void isGameFinished(Board board,int player) {
+		boolean gameFinished = checkWinner(board, player) || isBoardFull(board);
+        if (gameFinished) {
+            board.setIsFinished(1);
+        }
 	}
 
 }

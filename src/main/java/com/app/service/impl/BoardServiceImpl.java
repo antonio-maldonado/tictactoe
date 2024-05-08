@@ -50,7 +50,7 @@ public class BoardServiceImpl implements BoardService{
 		Board existingBoard = existingBoardOptional.get();
 		
 		existingBoard.setBoardState(newBoard.getBoardState());
-		existingBoard.setFinished(newBoard.isFinished());
+		existingBoard.setIsFinished(newBoard.getIsFinished());
 		
 		return boardRepository.save(existingBoard);
 	}

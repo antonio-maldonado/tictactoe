@@ -80,6 +80,10 @@ public class ApiController {
 		
         User user = userService.getUserById(userId);
         
+        for(Board board : user.getBoards()) {
+        	ticTacToeService.sortBoardSquares(board);
+        }
+        
 		return new ResponseEntity<>(new UserDAO(user), HttpStatus.OK);
 	}
 	
@@ -108,6 +112,8 @@ public class ApiController {
         }
         
 		Board board = boardService.getBoardById(boardId);
+		
+    	ticTacToeService.sortBoardSquares(board);
 		
 		return new ResponseEntity<>(board,HttpStatus.OK);
 	}
@@ -180,7 +186,7 @@ public class ApiController {
 
         Board board = boardRepository.findById(boardData.getBoardId()).get();
         
-        if (board.isFinished()) {
+        if (board.getIsFinished()==1) {
             return ResponseEntity.status(409).body(board); 
         }
         
@@ -188,7 +194,7 @@ public class ApiController {
 
         board.setName(boardData.getName());
         
-        if (!board.isFinished()) {
+        if (board.getIsFinished()==0) {
             board = ticTacToeService.bestMove(board);
         }
 

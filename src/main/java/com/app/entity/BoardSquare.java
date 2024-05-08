@@ -23,10 +23,11 @@ public class BoardSquare {
 	private Long id;
 	
 	@Column(name="state", length = 1, columnDefinition = "INT default 0")
-	private int state;
+	private int state = 0;
 	
 	@ManyToOne
 	@JoinColumn(name = "board_id")
 	@JsonBackReference
 	private Board board;
+
 }

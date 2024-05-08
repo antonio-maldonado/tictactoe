@@ -56,6 +56,5 @@ public class BoardSquareServiceImpl implements BoardSquareService {
 	@Override
 	public void deleteBoardSquare(long userId) {
 		boardSquareRepository.deleteById(userId);
-		
 	}
 }

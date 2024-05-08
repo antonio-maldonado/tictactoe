@@ -40,6 +40,6 @@ public class Board {
 	@Column(name="date")
 	private Date date;
 	
-	@Column(name="is_finished")
-	private boolean isFinished = false;
+	@Column(name="is_finished" , nullable = false, length = 1, columnDefinition = "INT default 0")
+	private int isFinished;
 }
