@@ -33,10 +33,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 
 @AutoConfigureMockMvc
-//@Transactional
 @WebMvcTest(controllers=ApiController.class)
 @Import(ApiController.class)
-
 public class ApiControllerTest {
 	@Autowired
 	private MockMvc mvc;

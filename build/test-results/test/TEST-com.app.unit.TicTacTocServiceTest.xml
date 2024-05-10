@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.app.unit.TicTacTocServiceTest" tests="7" skipped="0" failures="5" errors="0" timestamp="2024-05-08T19:19:18" hostname="ASUS-TUF-F17" time="0.073">
+<testsuite name="com.app.unit.TicTacTocServiceTest" tests="7" skipped="0" failures="5" errors="0" timestamp="2024-05-09T17:03:45" hostname="ASUS-TUF-F17" time="0.092">
   <properties/>
-  <testcase name="testCheckWinnerO()" classname="com.app.unit.TicTacTocServiceTest" time="0.033">
+  <testcase name="testCheckWinnerO()" classname="com.app.unit.TicTacTocServiceTest" time="0.045">
     <failure message="java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;com.app.entity.BoardSquare.getId()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;com.app.entity.BoardSquare.getId()&quot; is null
 	at com.app.service.impl.TicTacToeServiceImpl$1.compare(TicTacToeServiceImpl.java:80)
 	at com.app.service.impl.TicTacToeServiceImpl$1.compare(TicTacToeServiceImpl.java:77)
@@ -95,7 +95,7 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testCheckWinnerX()" classname="com.app.unit.TicTacTocServiceTest" time="0.002">
+  <testcase name="testCheckWinnerX()" classname="com.app.unit.TicTacTocServiceTest" time="0.003">
     <failure message="java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;com.app.entity.BoardSquare.getId()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;com.app.entity.BoardSquare.getId()&quot; is null
 	at com.app.service.impl.TicTacToeServiceImpl$1.compare(TicTacToeServiceImpl.java:80)
 	at com.app.service.impl.TicTacToeServiceImpl$1.compare(TicTacToeServiceImpl.java:77)
@@ -189,8 +189,8 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testIsBoardFull()" classname="com.app.unit.TicTacTocServiceTest" time="0.011"/>
-  <testcase name="testPlayMove_ValidMove()" classname="com.app.unit.TicTacTocServiceTest" time="0.004">
+  <testcase name="testIsBoardFull()" classname="com.app.unit.TicTacTocServiceTest" time="0.02"/>
+  <testcase name="testPlayMove_ValidMove()" classname="com.app.unit.TicTacTocServiceTest" time="0.003">
     <failure message="java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;com.app.entity.BoardSquare.getId()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;com.app.entity.BoardSquare.getId()&quot; is null
 	at com.app.service.impl.TicTacToeServiceImpl$1.compare(TicTacToeServiceImpl.java:80)
 	at com.app.service.impl.TicTacToeServiceImpl$1.compare(TicTacToeServiceImpl.java:77)
@@ -284,8 +284,8 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testIsBoardNotFull()" classname="com.app.unit.TicTacTocServiceTest" time="0.004"/>
-  <testcase name="testPlayMove_InvalidMove()" classname="com.app.unit.TicTacTocServiceTest" time="0.006">
+  <testcase name="testIsBoardNotFull()" classname="com.app.unit.TicTacTocServiceTest" time="0.003"/>
+  <testcase name="testPlayMove_InvalidMove()" classname="com.app.unit.TicTacTocServiceTest" time="0.005">
     <failure message="java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;com.app.entity.BoardSquare.getId()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;com.app.entity.BoardSquare.getId()&quot; is null
 	at com.app.service.impl.TicTacToeServiceImpl$1.compare(TicTacToeServiceImpl.java:80)
 	at com.app.service.impl.TicTacToeServiceImpl$1.compare(TicTacToeServiceImpl.java:77)

@@ -22,13 +22,16 @@ import com.app.entity.User;
 import com.app.entity.UserDAO;
 import com.app.repository.BoardRepository;
 import com.app.repository.UserRepository;
-import com.app.service.impl.BoardService;import com.app.service.impl.TicTacToeServiceImpl;
+import com.app.service.impl.BoardService;
+import com.app.service.impl.TicTacToeServiceImpl;
 import com.app.service.impl.UserService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.Data;
 
 @RestController
 @RequestMapping("api")
+@Tag(name = "API Controller", description = "Operations related to the main API")
 public class ApiController {
 	@Autowired
 	private UserService userService;
@@ -72,6 +75,7 @@ public class ApiController {
 		return new ResponseEntity<>(UserDAO.converToDAO(users), HttpStatus.OK);
 	}
 	
+    
 	@GetMapping("user/{userId}")
 	public ResponseEntity<?> getUserById(@PathVariable(name = "userId") long userId){
 		if(!userRepository.existsById(userId)) {

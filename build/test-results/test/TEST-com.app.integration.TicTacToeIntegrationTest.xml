@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.app.integration.TicTacToeIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-05-08T19:19:13" hostname="ASUS-TUF-F17" time="4.534">
+<testsuite name="com.app.integration.TicTacToeIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-05-09T17:03:53" hostname="ASUS-TUF-F17" time="5.049">
   <properties/>
-  <testcase name="testErrorCreatingUserNull()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.157"/>
-  <testcase name="testGetUserByEmail()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.702"/>
-  <testcase name="testCreateBoardsSquaresForBoard()" classname="com.app.integration.TicTacToeIntegrationTest" time="1.746"/>
-  <testcase name="testUpdateUser()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.618"/>
-  <testcase name="testErrorGettingBoardById()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.233"/>
-  <testcase name="testErrorDuplicateUser()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.501"/>
-  <testcase name="testCreateBoardForUser()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.564"/>
-  <system-out><![CDATA[2024-05-08T13:19:13.576-06:00  INFO 14284 --- [TictactoeGame] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.app.integration.TicTacToeIntegrationTest]: TicTacToeIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-05-08T13:19:13.604-06:00  INFO 14284 --- [TictactoeGame] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.app.TictactoeGameApplication for test class com.app.integration.TicTacToeIntegrationTest
-2024-05-08T13:19:14.044-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+  <testcase name="testErrorCreatingUserNull()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.144"/>
+  <testcase name="testGetUserByEmail()" classname="com.app.integration.TicTacToeIntegrationTest" time="1.29"/>
+  <testcase name="testCreateBoardsSquaresForBoard()" classname="com.app.integration.TicTacToeIntegrationTest" time="1.74"/>
+  <testcase name="testUpdateUser()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.59"/>
+  <testcase name="testErrorGettingBoardById()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.235"/>
+  <testcase name="testErrorDuplicateUser()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.459"/>
+  <testcase name="testCreateBoardForUser()" classname="com.app.integration.TicTacToeIntegrationTest" time="0.58"/>
+  <system-out><![CDATA[2024-05-09T11:03:53.080-06:00  INFO 4896 --- [TictactoeGame] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.app.integration.TicTacToeIntegrationTest]: TicTacToeIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-09T11:03:53.094-06:00  INFO 4896 --- [TictactoeGame] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.app.TictactoeGameApplication for test class com.app.integration.TicTacToeIntegrationTest
+2024-05-09T11:03:53.420-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     select
         u1_0.user_id,
         u1_0.email,
@@ -19,8 +19,8 @@
         users u1_0 
     where
         u1_0.email=?
-2024-05-08T13:19:14.064-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [antonio@gmail.com]
-2024-05-08T13:19:14.235-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:53.422-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [antonio@gmail.com]
+2024-05-09T11:03:53.574-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     select
         b1_0.user_id,
         b1_0.board_id,
@@ -31,8 +31,68 @@
         boards b1_0 
     where
         b1_0.user_id=?
-2024-05-08T13:19:14.236-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2024-05-08T13:19:14.482-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:53.574-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2024-05-09T11:03:53.709-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+    select
+        bs1_0.board_id,
+        bs1_0.id,
+        bs1_0.state 
+    from
+        board_squares bs1_0 
+    where
+        bs1_0.board_id=?
+2024-05-09T11:03:53.710-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [9]
+2024-05-09T11:03:53.823-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+    select
+        bs1_0.board_id,
+        bs1_0.id,
+        bs1_0.state 
+    from
+        board_squares bs1_0 
+    where
+        bs1_0.board_id=?
+2024-05-09T11:03:53.824-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-05-09T11:03:53.955-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+    select
+        bs1_0.board_id,
+        bs1_0.id,
+        bs1_0.state 
+    from
+        board_squares bs1_0 
+    where
+        bs1_0.board_id=?
+2024-05-09T11:03:53.956-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-05-09T11:03:54.077-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+    select
+        bs1_0.board_id,
+        bs1_0.id,
+        bs1_0.state 
+    from
+        board_squares bs1_0 
+    where
+        bs1_0.board_id=?
+2024-05-09T11:03:54.077-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [5]
+2024-05-09T11:03:54.190-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+    select
+        bs1_0.board_id,
+        bs1_0.id,
+        bs1_0.state 
+    from
+        board_squares bs1_0 
+    where
+        bs1_0.board_id=?
+2024-05-09T11:03:54.191-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-05-09T11:03:54.306-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+    select
+        bs1_0.board_id,
+        bs1_0.id,
+        bs1_0.state 
+    from
+        board_squares bs1_0 
+    where
+        bs1_0.board_id=?
+2024-05-09T11:03:54.306-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [3]
+2024-05-09T11:03:54.542-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     select
         u1_0.user_id,
         u1_0.email,
@@ -41,111 +101,111 @@
         users u1_0 
     where
         u1_0.email=?
-2024-05-08T13:19:14.483-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
-2024-05-08T13:19:14.795-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:54.544-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
+2024-05-09T11:03:54.808-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         users
         (email, password) 
     values
         (?, ?)
-2024-05-08T13:19:14.800-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
-2024-05-08T13:19:14.800-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [$2a$10$dBY85ryccSfofHZrggnl2OHaCoWKYNLMYypvMvcu1ax4M6iG3pn5.]
-2024-05-08T13:19:14.928-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:54.811-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
+2024-05-09T11:03:54.811-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [$2a$10$l.brk4y.Fb6y3yH2fMX86..wYygBESETlfWvpMPeQ1VM5au4vyNd2]
+2024-05-09T11:03:54.941-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:14.929-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:14.929-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.039-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:54.942-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:54.942-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:55.057-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:15.040-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:15.040-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.153-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:55.057-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:55.057-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:55.169-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:15.153-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:15.153-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.264-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:55.170-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:55.170-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:55.288-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:15.265-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:15.265-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.378-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:55.288-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:55.288-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:55.438-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:15.379-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:15.379-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.489-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:55.439-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:55.439-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:55.552-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:15.490-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:15.490-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.639-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:55.552-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:55.554-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:55.666-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:15.640-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:15.640-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.761-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:55.667-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:55.667-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:55.779-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:15.762-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:15.763-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.872-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:55.779-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:55.779-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:55.897-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         board_squares
         (board_id, state) 
     values
         (?, ?)
-2024-05-08T13:19:15.873-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
-2024-05-08T13:19:15.873-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.990-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:55.897-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-05-09T11:03:55.897-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:56.017-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         boards
         (date, is_finished, name, user_id) 
     values
         (?, ?, ?, ?)
-2024-05-08T13:19:15.991-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [null]
-2024-05-08T13:19:15.991-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:15.991-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [null]
-2024-05-08T13:19:15.992-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [3]
-Board ID: 1
-BoardSquare board ID: 1
-2024-05-08T13:19:16.231-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:56.017-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [null]
+2024-05-09T11:03:56.017-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:56.017-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [null]
+2024-05-09T11:03:56.018-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [3]
+Board ID: 10
+BoardSquare board ID: 10
+2024-05-09T11:03:56.285-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     select
         u1_0.user_id,
         u1_0.email,
@@ -154,17 +214,17 @@ BoardSquare board ID: 1
         users u1_0 
     where
         u1_0.email=?
-2024-05-08T13:19:16.231-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
-2024-05-08T13:19:16.484-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:56.285-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
+2024-05-09T11:03:56.507-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         users
         (email, password) 
     values
         (?, ?)
-2024-05-08T13:19:16.484-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
-2024-05-08T13:19:16.485-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [$2a$10$X0T4T2r3gxYIYAMI8rUrouNglTnlJ9DgWMYigeP/./.lMpDfs7Oky]
-2024-05-08T13:19:16.852-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:56.507-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
+2024-05-09T11:03:56.508-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [$2a$10$g.cHqPqnMy8fbaL9w1iww.JL2P1PGltqno40sRfPUscGMjADhjDPi]
+2024-05-09T11:03:56.879-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     select
         b1_0.board_id,
         b1_0.date,
@@ -186,8 +246,8 @@ BoardSquare board ID: 1
             on b1_0.board_id=bs1_0.board_id 
     where
         b1_0.board_id=?
-2024-05-08T13:19:16.854-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [99999]
-2024-05-08T13:19:17.086-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:56.880-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [99999]
+2024-05-09T11:03:57.113-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     select
         u1_0.user_id,
         u1_0.email,
@@ -196,17 +256,17 @@ BoardSquare board ID: 1
         users u1_0 
     where
         u1_0.email=?
-2024-05-08T13:19:17.086-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
-2024-05-08T13:19:17.319-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:57.113-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
+2024-05-09T11:03:57.340-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         users
         (email, password) 
     values
         (?, ?)
-2024-05-08T13:19:17.320-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
-2024-05-08T13:19:17.321-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [$2a$10$Z/3hOTeru9EQ08g9D4uLau/VBWfR/pyGJw.PVQva.YZcpdc3Lv0ia]
-2024-05-08T13:19:17.586-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:57.341-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
+2024-05-09T11:03:57.341-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [$2a$10$z58FwDDqgFMJJ4Fritkx0uJXKBwg8xR.aphb2w1mzDeFqv61HGee6]
+2024-05-09T11:03:57.574-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     select
         u1_0.user_id,
         u1_0.email,
@@ -215,27 +275,27 @@ BoardSquare board ID: 1
         users u1_0 
     where
         u1_0.email=?
-2024-05-08T13:19:17.586-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
-2024-05-08T13:19:17.803-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:57.575-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
+2024-05-09T11:03:57.805-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         users
         (email, password) 
     values
         (?, ?)
-2024-05-08T13:19:17.804-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
-2024-05-08T13:19:17.804-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [$2a$10$KIoDBHR.ZWvDVpvdPJDbwe0xd1rzKVxhHd/nRoOSTZUQr7SKkEI.u]
-2024-05-08T13:19:17.917-06:00 DEBUG 14284 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
+2024-05-09T11:03:57.805-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [user@hotmail.com]
+2024-05-09T11:03:57.805-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [$2a$10$SIaKMLG.dW62yT3TBc71k.w7n0IBrjAtlpxkfhhrySIMWtkyiYnT6]
+2024-05-09T11:03:57.919-06:00 DEBUG 4896 --- [TictactoeGame] [    Test worker] org.hibernate.SQL                        : 
     insert 
     into
         boards
         (date, is_finished, name, user_id) 
     values
         (?, ?, ?, ?)
-2024-05-08T13:19:17.917-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [null]
-2024-05-08T13:19:17.917-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
-2024-05-08T13:19:17.917-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [null]
-2024-05-08T13:19:17.917-06:00 TRACE 14284 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [6]
+2024-05-09T11:03:57.919-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [null]
+2024-05-09T11:03:57.920-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [0]
+2024-05-09T11:03:57.920-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [null]
+2024-05-09T11:03:57.920-06:00 TRACE 4896 --- [TictactoeGame] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [6]
 User ID: 6
 Board user ID: 6
 ]]></system-out>
