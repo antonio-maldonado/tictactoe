@@ -31,7 +31,7 @@ import lombok.Data;
 
 @RestController
 @RequestMapping("api")
-@Tag(name = "API Controller", description = "Operations related to the main API")
+@Tag(name = "API Controller", description = "Operations related to the game Tic Tac Toe")
 public class ApiController {
 	@Autowired
 	private UserService userService;

@@ -1,6 +1,6 @@
 # Tictactoe game (backend)
 
-![Tic tac toe game](tictactoe-logo.png)
+![Tic tac toe game](src/img/tictactoe-logo.png)
 
 ## Technologies used
 - Java SE 17
@@ -14,4 +14,7 @@
 - Api documentation with Swagger 2.5.0
 
 ## Database design
-![Database image](db.png)
+![Database image](src/img/db.png)
+
+## API Rest
+![API Rest image](src/img/api.png)

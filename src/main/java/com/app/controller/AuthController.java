@@ -14,10 +14,12 @@ import com.app.entity.UserDAO;
 import com.app.security.JwtUtil;
 import com.app.service.impl.UserServiceImpl;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.Data;
 
 @RestController
 @RequestMapping("/auth")
+@Tag(name = "Auth Controller", description = "Operations related to login and registration")
 public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
