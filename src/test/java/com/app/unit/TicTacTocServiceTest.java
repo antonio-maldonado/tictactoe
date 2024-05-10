@@ -28,34 +28,60 @@ public class TicTacTocServiceTest {
     @Test
     public void testPlayMove_ValidMove() {
         Board board = new Board();
+        board.setId(99L);
+
         board.setBoardState(new ArrayList<>());
         for (int i = 0; i < 9; i++) {
             board.getBoardState().add(new BoardSquare());
         }
 
-        Board updatedBoard = ticTacToeService.playMove(board, 0, 1); // Primer movimiento
+        board.getBoardState().get(0).setId(1L);
+        board.getBoardState().get(1).setId(2L);
+        board.getBoardState().get(2).setId(3L);
+        board.getBoardState().get(3).setId(4L);
+        board.getBoardState().get(4).setId(5L);
+        board.getBoardState().get(5).setId(6L);
+        board.getBoardState().get(6).setId(7L);
+        board.getBoardState().get(7).setId(8L);
+        board.getBoardState().get(8).setId(9L);
+        
+        Board updatedBoard = ticTacToeService.playMove(board, 0, 1); 
 
-        assertEquals(1, updatedBoard.getBoardState().get(0).getState()); // Verificar que el estado es correcto
+        assertEquals(1, updatedBoard.getBoardState().get(0).getState());
     }
 
     @Test
     public void testPlayMove_InvalidMove() {
         Board board = new Board();
+        board.setId(99L);
+
         board.setBoardState(new ArrayList<>());
         for (int i = 0; i < 9; i++) {
             board.getBoardState().add(new BoardSquare());
         }
 
+        board.getBoardState().get(0).setId(1L);
+        board.getBoardState().get(1).setId(2L);
+        board.getBoardState().get(2).setId(3L);
+        board.getBoardState().get(3).setId(4L);
+        board.getBoardState().get(4).setId(5L);
+        board.getBoardState().get(5).setId(6L);
+        board.getBoardState().get(6).setId(7L);
+        board.getBoardState().get(7).setId(8L);
+        board.getBoardState().get(8).setId(9L);
+        
         board = ticTacToeService.playMove(board, 0, 1);
 
         Board result = ticTacToeService.playMove(board, 0, 2);
 
-        assertNotEquals(2, result.getBoardState().get(0).getState()); // Verificar que no se actualizó
+        assertNotEquals(2, result.getBoardState().get(0).getState());
     }
     
     @Test
     public void testIsBoardFull() {
         Board board = new Board();
+        board.setId(99L);
+
         board.setBoardState(new ArrayList<>());
         Random rand = new Random();
         
@@ -63,6 +89,16 @@ public class TicTacTocServiceTest {
         	int state = rand.nextInt(2)+1;
             board.getBoardState().add(new BoardSquare(0L,state,null));
         }
+        
+        board.getBoardState().get(0).setId(1L);
+        board.getBoardState().get(1).setId(2L);
+        board.getBoardState().get(2).setId(3L);
+        board.getBoardState().get(3).setId(4L);
+        board.getBoardState().get(4).setId(5L);
+        board.getBoardState().get(5).setId(6L);
+        board.getBoardState().get(6).setId(7L);
+        board.getBoardState().get(7).setId(8L);
+        board.getBoardState().get(8).setId(9L);
         
         boolean isFull = ticTacToeService.isBoardFull(board);
         
@@ -78,6 +114,16 @@ public class TicTacTocServiceTest {
             board.getBoardState().add(new BoardSquare());
         }
         
+        board.getBoardState().get(0).setId(1L);
+        board.getBoardState().get(1).setId(2L);
+        board.getBoardState().get(2).setId(3L);
+        board.getBoardState().get(3).setId(4L);
+        board.getBoardState().get(4).setId(5L);
+        board.getBoardState().get(5).setId(6L);
+        board.getBoardState().get(6).setId(7L);
+        board.getBoardState().get(7).setId(8L);
+        board.getBoardState().get(8).setId(9L);
+        
         boolean isFull = ticTacToeService.isBoardFull(board);
         
         assertEquals(false, isFull);
@@ -86,11 +132,23 @@ public class TicTacTocServiceTest {
     @Test
     public void testCheckWinnerX() {
         Board board = new Board();
+        board.setId(99L);
+
         board.setBoardState(new ArrayList<>());
         
         for (int i = 0; i < 9; i++) {
             board.getBoardState().add(new BoardSquare());
         }
+        
+        board.getBoardState().get(0).setId(1L);
+        board.getBoardState().get(1).setId(2L);
+        board.getBoardState().get(2).setId(3L);
+        board.getBoardState().get(3).setId(4L);
+        board.getBoardState().get(4).setId(5L);
+        board.getBoardState().get(5).setId(6L);
+        board.getBoardState().get(6).setId(7L);
+        board.getBoardState().get(7).setId(8L);
+        board.getBoardState().get(8).setId(9L);
         
         board.getBoardState().get(0).setState(1);
         board.getBoardState().get(1).setState(2);
@@ -110,11 +168,23 @@ public class TicTacTocServiceTest {
     @Test
     public void testCheckWinnerO() {
         Board board = new Board();
+        board.setId(99L);
+
         board.setBoardState(new ArrayList<>());
         
         for (int i = 0; i < 9; i++) {
             board.getBoardState().add(new BoardSquare());
         }
+        
+        board.getBoardState().get(0).setId(1L);
+        board.getBoardState().get(1).setId(2L);
+        board.getBoardState().get(2).setId(3L);
+        board.getBoardState().get(3).setId(4L);
+        board.getBoardState().get(4).setId(5L);
+        board.getBoardState().get(5).setId(6L);
+        board.getBoardState().get(6).setId(7L);
+        board.getBoardState().get(7).setId(8L);
+        board.getBoardState().get(8).setId(9L);
         
         board.getBoardState().get(0).setState(2);
         board.getBoardState().get(1).setState(2);
@@ -130,11 +200,23 @@ public class TicTacTocServiceTest {
     @Test
     public void testCheckNotWinner() {
         Board board = new Board();
+        board.setId(99L);
         board.setBoardState(new ArrayList<>());
+        
         
         for (int i = 0; i < 9; i++) {
             board.getBoardState().add(new BoardSquare());
         }
+        
+        board.getBoardState().get(0).setId(1L);
+        board.getBoardState().get(1).setId(2L);
+        board.getBoardState().get(2).setId(3L);
+        board.getBoardState().get(3).setId(4L);
+        board.getBoardState().get(4).setId(5L);
+        board.getBoardState().get(5).setId(6L);
+        board.getBoardState().get(6).setId(7L);
+        board.getBoardState().get(7).setId(8L);
+        board.getBoardState().get(8).setId(9L);
         
         board.getBoardState().get(0).setState(1);
         board.getBoardState().get(1).setState(2);

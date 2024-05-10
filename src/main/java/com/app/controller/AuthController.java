@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.entity.User;
 import com.app.entity.UserDAO;
 import com.app.security.JwtUtil;
+import com.app.service.impl.UserService;
 import com.app.service.impl.UserServiceImpl;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -25,7 +26,7 @@ public class AuthController {
     private JwtUtil jwtUtil;
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
     
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {

@@ -31,7 +31,8 @@ public class JwtUtil {
 				.verifyWith(secretKey)
 				.build()
 				.parseSignedClaims(token)
-				.getPayload().getSubject();
+				.getPayload()
+				.getSubject();
 	}
 	
 	public boolean validateToken(String token, UserDetails userDetails) {
